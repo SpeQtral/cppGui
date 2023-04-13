@@ -17,6 +17,7 @@ set(PROJECT_SOURCES
         window.cpp
         window.h
         window.ui
+        workerThread.h
         workerThread.cpp
 )
 
