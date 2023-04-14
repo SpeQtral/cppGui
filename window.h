@@ -7,7 +7,7 @@
 #include <QtCharts>
 #include <unordered_map>
 
-#include "WorkerThread.h"
+#include "workerThread.h"
 #include "payloadEnums.hpp"
 
 QT_BEGIN_NAMESPACE

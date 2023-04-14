@@ -11,7 +11,7 @@ void WorkerThread::run() {
         if (this->isInterruptionRequested()) {
             break;
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(20));
+        std::this_thread::sleep_for(std::chrono::milliseconds(40));
     }
     emit this->threadStopped();
     qmutex.unlock();
