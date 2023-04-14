@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1209</width>
-    <height>638</height>
+    <width>886</width>
+    <height>587</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,8 +21,11 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" colspan="2">
-     <widget class="QChartView" name="graphicsView">
+    <item row="1" column="0">
+     <widget class="QChartView" name="graphicsViewCoincidenceCounts"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QChartView" name="graphicsViewQBER">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -40,14 +43,20 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item row="2" column="0">
+     <widget class="QChartView" name="graphicsViewSecretKeyBits"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QChartView" name="graphicsViewFValue"/>
+    </item>
+    <item row="3" column="0">
      <widget class="QPushButton" name="stopButton">
       <property name="text">
        <string>Stop</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
+    <item row="3" column="1">
      <widget class="QPushButton" name="runButton">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -60,6 +69,16 @@
       </property>
      </widget>
     </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="text">
+       <string>Display data output by sQrypt (stripped down version)</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -67,7 +86,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1209</width>
+     <width>886</width>
      <height>21</height>
     </rect>
    </property>

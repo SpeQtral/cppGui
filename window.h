@@ -5,8 +5,10 @@
 #include <QChartView>
 #include <QMainWindow>
 #include <QtCharts>
+#include <unordered_map>
 
 #include "WorkerThread.h"
+#include "payloadEnums.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,13 +27,14 @@ class Window : public QMainWindow
 
    private:
     Ui::Window *ui;
-     WorkerThread *workerThread;
-//    Controller *controller;
+    WorkerThread *workerThread;
     void startThread();
-    QScatterSeries *series;
-    QChart *chart;
-    QValueAxis *axisX;
-    QValueAxis *axisY;
+    void setupChart(PayloadDataFlag payloadDataFlag, QChartView *inputChartView, QString const& title, double xMin, double xMax, double yMin, double yMax);
+
+    std::unordered_map<PayloadDataFlag, QLineSeries *> series;
+    std::unordered_map<PayloadDataFlag, QChart *> charts;
+    std::unordered_map<PayloadDataFlag, QValueAxis *> axesX;
+    std::unordered_map<PayloadDataFlag, QValueAxis *> axesY;
 
    public slots:
     void threadStopped();

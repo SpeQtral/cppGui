@@ -6,12 +6,12 @@
 
 void WorkerThread::run() {
     qmutex.lock();
-    for (int i = 0; i < 500; i++) {
-        emit this->updatePlot(static_cast<double>(i) / 500, std::sin(static_cast<double>(i) * 0.1));
+    for (int i = 0; i < 15000; i++) {
+        emit this->updatePlot(static_cast<double>(i), 0.5*(std::sin(static_cast<double>(i) * 0.1)+1));
         if (this->isInterruptionRequested()) {
             break;
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(3));
+        std::this_thread::sleep_for(std::chrono::milliseconds(20));
     }
     emit this->threadStopped();
     qmutex.unlock();
